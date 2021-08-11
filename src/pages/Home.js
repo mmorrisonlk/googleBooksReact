@@ -1,7 +1,8 @@
 import React from "react";
 import { Component } from "react";
 import { Jumbotron, Card, Grid, List, Container, Row, Col, Collapse, CardColumns } from "react-bootstrap";
-import { Form } from "../components/Form"
+import { Form } from "../components/Form";
+import { Book } from "../components/Book";
 import API from "../utils/API";
 
 class Home extends Component {
