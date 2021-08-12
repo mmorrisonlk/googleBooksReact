@@ -14,3 +14,5 @@ function NoMatch() {
         </Container>
     )
 }
+
+export default NoMatch;
