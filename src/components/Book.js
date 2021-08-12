@@ -1,7 +1,6 @@
 import React from "react";
 import { ListGroupItem } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
-import "./style.css"
 
 function Book ({ title, subtitle, authors, link, description, image, Button }) {
     return (

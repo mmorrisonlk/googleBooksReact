@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Jumbotron, Card, Footer } from "react-bootstrap";
 import Book from "../components/Book";
 import API from "../utils/API";
-import { Col, Row, Container, List } from "react-bootstrap";
+import { Col, Row, Container, ListGroup } from "react-bootstrap";
 
 class Saved extends Component {
     state = {
@@ -45,7 +45,7 @@ class Saved extends Component {
                     <Col size="md-12">
                         <Card title="Saved Books" icon="download">
                             {this.state.books.length ? (
-                                <List>
+                                <ListGroup>
                                     {this.state.books.map(book => (
                                         <Book
                                             key={book.id}
@@ -65,7 +65,7 @@ class Saved extends Component {
                                             )}
                                         />
                                     ))}
-                                </List>
+                                </ListGroup>
                             ) : (
                                 <h2 className="text-center">No Saved Books</h2>
                             )}
@@ -76,3 +76,5 @@ class Saved extends Component {
         )
     }
 }
+
+export default Saved;

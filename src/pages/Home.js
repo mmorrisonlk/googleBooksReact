@@ -1,8 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import { Jumbotron, Card, Grid, List, Container, Row, Col, Collapse, CardColumns } from "react-bootstrap";
-import { Form } from "../components/Form";
-import { Book } from "../components/Book";
+import { Jumbotron, Card, Grid, Container, Row, Col, Collapse, CardColumns, ListGroup } from "react-bootstrap";
+import Form from "../components/Form";
+import Book from "../components/Book";
 import API from "../utils/API";
 
 class Home extends Component {
@@ -79,7 +79,7 @@ class Home extends Component {
                     <Col size="md-12">
                         <Card title="Results">
                             {this.state.books.length ? (
-                                <List>
+                                <ListGroup>
                                     {this.state.books.map(book => (
                                         <Book
                                             key={book.id}
@@ -99,7 +99,7 @@ class Home extends Component {
                                             )}
                                         />
                                     ))}
-                                </List>
+                                </ListGroup>
                             ) : (
                                 <h2 className="text-center">{this.state.message}</h2>
                             )}
@@ -110,3 +110,5 @@ class Home extends Component {
         )
     }
 }
+
+export default Home;

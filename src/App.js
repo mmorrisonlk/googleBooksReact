@@ -1,4 +1,4 @@
-import React from 'react';;
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Saved from "./pages/Saved";
@@ -12,7 +12,7 @@ function App() {
         <Nav />
           <Route exact path="/" component={Home} />
           <Route exact path="/saved" component={Saved} />
-          <Route component={NoMatch} />
+          <Route path="*" component={NoMatch} />
       </div>
     </Router>
   );
