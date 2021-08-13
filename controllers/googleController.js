@@ -5,13 +5,11 @@ module.exports = {
     findAll: function(req, res) {
         console.log("google Controller")
         console.log(req.query)
-        // const { query: params } = req;
         axios
             .get("https://www.googleapis.com/books/v1/volumes", {
                 params: req.query
             })
             .then(results => {
-                // console.log(results.data.items)
                 return results.data.items.filter(
                     result =>
                         result.volumeInfo.title &&
@@ -22,18 +20,18 @@ module.exports = {
                         result.volumeInfo.imageLinks.thumbnail
                 )}
             )
+            .then(apiBooks => {
+                return db.Book.find().then(dbBooks =>
+                    apiBooks.filter(apiBook =>
+                        dbBooks.every(dbBook => dbBook.googleId.toString() !== apiBook.id)))}
+                )
             .then(books => {
-                console.log(books)
                 res.json(books)
                 return books}
                 )
-            // .then(apiBooks => {
-            //     console.log(apiBooks)
-            //     return db.apiBooks.find().then(dbBooks =>
-            //         apiBooks.filter(apiBook =>
-            //             dbBooks.every(dbBook => dbBook.googleId.toString() !== apiBook.id)))}
-            //     )
-
-            .catch(err => res.status(422).json(err));
+            .catch(err => {
+                console.log(err);
+                res.status(422).json(err)
+            });
     }
 };

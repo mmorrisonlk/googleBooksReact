@@ -68,6 +68,8 @@ class Home extends Component {
                             <h2 className="text-center">Search for and Save Books of Interest</h2>
                         </Jumbotron>
                     </Col>
+                </Row>
+                <Row>
                     <Col size="md-12">
                         <Card title="Book Search" icon="far fa-book">
                             <Form
