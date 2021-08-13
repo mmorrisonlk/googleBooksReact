@@ -7,6 +7,6 @@ export default {
     getBooks: function(query) {
         console.log("Axios Get Books")
         console.log(query)
-        return axios.get("/api/google/")
+        return axios.get("/api/google/", query)
     }
 }

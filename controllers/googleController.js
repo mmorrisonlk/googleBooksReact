@@ -4,11 +4,12 @@ const db = require("../models");
 module.exports = {
     findAll: function(req, res) {
         console.log("google Controller")
+        console.log(req.query)
         console.log(req)
-        const { query: params } = req;
+        // const { query: params } = req;
         axios
             .get("https://www.googleapis.com/books/v1/volumes", {
-                params
+                params: req.query
             })
             .then(results =>
                 results.data.items.filter(
