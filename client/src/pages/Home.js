@@ -23,10 +23,11 @@ class Home extends Component {
         console.log("Get Books")
         console.log(this.state.q)
         API.getBooks(this.state.q)
-            .then(res =>
+            .then(res => {
+                console.log(res)
                 this.setState({
                     books: res.data
-                })
+                })}
             )
             .catch(() =>
                 this.setState({
@@ -36,8 +37,8 @@ class Home extends Component {
             );
     };
 
-    handleFormSubmit = (event) => {
-        // event.PreventDefault();
+    handleFormSubmit = event => {
+        event.preventDefault();
         this.getBooks();
     };
 

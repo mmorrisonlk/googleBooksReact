@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route/*, Switch*/ } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
@@ -10,9 +10,11 @@ function App() {
     <Router>
       <div>
         <Nav />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/saved" component={Saved} />
-          <Route path="*" component={NoMatch} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/saved" component={Saved} />
+            <Route path="" component={NoMatch} />
+          </Switch>
       </div>
     </Router>
   );
