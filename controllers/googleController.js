@@ -3,6 +3,8 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res) {
+        console.log("google Controller")
+        console.log(req)
         const { query: params } = req;
         axios
             .get("https://www.googleapis.com/books/v1/volumes", {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { Jumbotron, Card, Grid, Container, Row, Col, Collapse, CardColumns, ListGroup } from "react-bootstrap";
+import { Jumbotron, Card/*, Grid*/, Container, Row, Col,/* Collapse, CardColumns,*/ ListGroup } from "react-bootstrap";
 import Form from "../components/Form";
 import Book from "../components/Book";
 import API from "../utils/API";
@@ -20,6 +20,8 @@ class Home extends Component {
     };
 
     getBooks = () => {
+        console.log("Get Books")
+        console.log(this.state.q)
         API.getBooks(this.state.q)
             .then(res =>
                 this.setState({
@@ -34,8 +36,8 @@ class Home extends Component {
             );
     };
 
-    handleFormSubmit = event => {
-        event.PreventDefault();
+    handleFormSubmit = (event) => {
+        // event.PreventDefault();
         this.getBooks();
     };
 

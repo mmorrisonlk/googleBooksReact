@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { Jumbotron, Card, Footer } from "react-bootstrap";
+import { Jumbotron, Card /*Footer*/ } from "react-bootstrap";
 import Book from "../components/Book";
 import API from "../utils/API";
 import { Col, Row, Container, ListGroup } from "react-bootstrap";
