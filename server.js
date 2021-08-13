@@ -13,10 +13,12 @@ app.use(routes);
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost:27017/google_book_search",
     {
-        useCreateIndex: true,
-        useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
     }
-);
+  );
 
 app.listen(PORT, () =>
     console.log(`API Server now listening on PORT ${PORT}!`)
