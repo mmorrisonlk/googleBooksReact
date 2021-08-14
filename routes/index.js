@@ -3,7 +3,7 @@ const express = require("express");
 const router = require("express").Router();
 const apiRoutes = require("./api");
 
-router.use("/static", express.static(path.join(__dirname, '../client/build/static')));
+router.use(express.static(path.join(__dirname, '../client/build/')));
 
 // API Routes
 router.use("/api", apiRoutes);
