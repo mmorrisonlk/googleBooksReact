@@ -19,8 +19,8 @@ function App() {
           </Container>
         </Navbar>
           <Switch>
-            <Route exact path="/" component={Home} />
             <Route exact path="/saved" component={Saved} />
+            <Route path="/" component={Home} />            
             <Route path="" component={NoMatch} />
           </Switch>
       </div>
