@@ -54,7 +54,7 @@
     ]
   },
   "engines": {
-    "node": "14.x"
+    "node": "14.16"
   },
   "main": "server.js",
   "keywords": [],
